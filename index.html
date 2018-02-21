@@ -4,18 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>test_task_json_vue</title>
+    <link href="sass/main.sass"></link>
   </head>
   <body>
-    
+
     <div id="app">
       <table class="data_table">
+        <tr>
+          <td v-for="key in keysArray">
+            <h3>search for {{key}}<h3>
+              <!-- v-on:input="startSearch" -->
+            <input type="text" v-bind:id="key" v-model="user_message[key]">
+          </td>
+        </tr>
         <tr>
           <td>id</td>
           <td>name</td>
           <td>location</td>
           <td>currency</td>
         </tr>
-        <tr v-for="user in array">
+        <tr v-for="user in filteredSearching">
           <td>{{user.id}}</td>
           <td>{{user.name}}</td>
           <td>{{user.location}}</td>

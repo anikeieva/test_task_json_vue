@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>test_task_json_vue</title>
+  </head>
+  <body>
+    
+    <div id="app">
+      <table class="data_table">
+        <tr>
+          <td>id</td>
+          <td>name</td>
+          <td>location</td>
+          <td>currency</td>
+        </tr>
+        <tr v-for="user in array">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.location}}</td>
+          <td>{{user.currency}}</td>
+        </tr>
+      </table>
+    </div>
+
+  </body>
+</html>

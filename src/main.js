@@ -31,6 +31,13 @@ new Vue({
           tableData = user[key].toLowerCase();
           searchingData = this.user_message[key].toLowerCase();
         }
+
+        for (var prop in this.user_message) {
+          if(prop !== key) {
+            this.user_message[prop] = "";
+          }
+        }
+
         return tableData.match(searchingData);
       });
       this.filteredArray = result;

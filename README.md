@@ -1,6 +1,14 @@
 # test_task_json_vue
 
-> A Vue.js test project
+This is a test project. In it was realized outputing test json data
+to the HTML table and live search by separate fields. Also there is
+counting total currency(fourth table's field).
+
+Project was created with the help of Vue.js, vue-cli. Also I worked with:
+Webpack, Sass, ES6. 
+
+Follow the link to see a page of project (at GitHub Pages):
+https://anikeieva.github.io/test_task_json_vue/
 
 ## Build Setup
 
@@ -17,5 +25,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

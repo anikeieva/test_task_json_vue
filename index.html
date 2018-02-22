@@ -15,11 +15,11 @@
 
       <table class="data_table">
         <tr>
-          <td colspan="4" class="totalCurrency">Total currency: <span>{{totalCurrency}}<span></td>
+          <td colspan="4" class="totalCurrency">Total currency: <span>{{totalCurrency}}</span></td>
         </tr>
         <tr>
           <td v-for="key in keysArray">
-            <h3>search for <span v-bind:class="key+'Span'">"{{key}}"<span></h3>
+            <h3>search for <span v-bind:class="key+'Span'">"{{key}}"</span></h3>
             <input v-on:input="filter" type="text" v-bind:id="key" v-model="user_message[key]">
           </td>
         </tr>

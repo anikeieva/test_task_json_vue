@@ -16,15 +16,34 @@ new Vue({
       location: '',
       currency: ''
     },
-    arrayOfSearchingLetters: []
+    filteredArray: dataArray,
   },
-  computed: {
-    filteredSearching: function() {
-      return this.array.filter((user) => {
-        var tableData = user.name.toLowerCase();
-        var searchingData = this.user_message.name.toLowerCase();
+  methods: {
+    filter: function(e) {
+      let result = this.array.filter(user => {
+        const key = e.target.id;
+        let tableData;
+        let searchingData;
+        if (typeof user[key] == "number") {
+          tableData = user[key].toString();
+          searchingData = this.user_message[key].toString();
+        } else {
+          tableData = user[key].toLowerCase();
+          searchingData = this.user_message[key].toLowerCase();
+        }
         return tableData.match(searchingData);
       });
+      this.filteredArray = result;
+      return result;
+    }
+  },
+  computed: {
+    totalCurrency: function() {
+      let resultSum = 0;
+      this.filteredArray.filter(user => {
+        resultSum += parseInt(user.currency);
+      });
+      return resultSum;
     }
   }
 });

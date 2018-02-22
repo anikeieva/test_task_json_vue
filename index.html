@@ -9,21 +9,20 @@
   <body>
 
     <div id="app">
+
+      <h1>Test task table</h1>
+
       <table class="data_table">
+        <tr>
+          <td colspan="4" class="totalCurrency">Total currency: <span>{{totalCurrency}}<span></td>
+        </tr>
         <tr>
           <td v-for="key in keysArray">
             <h3>search for {{key}}<h3>
-              <!-- v-on:input="startSearch" -->
-            <input type="text" v-bind:id="key" v-model="user_message[key]">
+            <input v-on:input="filter" type="text" v-bind:id="key" v-model="user_message[key]">
           </td>
         </tr>
-        <tr>
-          <td>id</td>
-          <td>name</td>
-          <td>location</td>
-          <td>currency</td>
-        </tr>
-        <tr v-for="user in filteredSearching">
+        <tr v-for="user in filteredArray">
           <td>{{user.id}}</td>
           <td>{{user.name}}</td>
           <td>{{user.location}}</td>

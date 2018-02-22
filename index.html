@@ -16,9 +16,13 @@
         <tr>
           <td colspan="4" class="totalCurrency">Total currency: <span>{{totalCurrency}}<span></td>
         </tr>
-        <tr>
-          <td v-for="key in keysArray">
-            <h3>search for {{key}}<h3>
+        <tr searchTop>
+          <td v-for="key in keysArray" class="searchTop">
+            <h3>search for <span v-bind:class="key+'Span'">"{{key}}"<span></h3>
+          </td>
+        </tr>
+        <tr searchBottom>
+          <td v-for="key in keysArray" class="searchBottom">
             <input v-on:input="filter" type="text" v-bind:id="key" v-model="user_message[key]">
           </td>
         </tr>
@@ -26,7 +30,7 @@
           <td>{{user.id}}</td>
           <td>{{user.name}}</td>
           <td>{{user.location}}</td>
-          <td>{{user.currency}}</td>
+          <td class="dataCurrency">{{user.currency}}</td>
         </tr>
       </table>
     </div>
